@@ -1,17 +1,17 @@
 # Script to evaluate segmentation results
 
-Following segmentation statistics would be calculated:
+The following segmentation statistics are available:
 - DICE
 - AJI
 - AJI+ (another variant of AJI)
 - PQ
 - Boundary F1 score
       
-Following instance detection statistics would be calculated:
-- Recall -  under IoU=0.5
-- Precision -  under IoU=0.5
-- F1 -  under IoU=0.5
-- FDR -  under IoU=0.5
+The following instance detection statistics are available:
+- Recall -  for the threshold IoU=0.5 
+- Precision -  for the threshold IoU=0.5 
+- F1 -  for the threshold IoU=0.5 
+- FDR -  for the threshold IoU=0.5 
 
 ---
 
@@ -25,27 +25,27 @@ pip install -r requirements.txt
 
 # How to Use the Script
 
-1. Prepare Your Data
+## 1. Prepare Your Data
 
-You will need:
+### You will need:
 - Prediction masks saved in one folder.
 - Ground truth (GT) masks saved in another folder.
 
-File requirements:
-- The filenames of corresponding masks in both folders should match exactly. For example: mask_1.npy in both GT and prediction folders.
-- The masks must be saved as NumPy arrays (.npy files).
+### File requirements:
+- The filenames of corresponding masks in both folders should match exactly. For example: `mask_1.npy` in both GT and prediction folders.
+- The masks must be saved as NumPy arrays (`.npy` files).
 - Each nucleus in the mask must have a unique ID. So if you have two nuclei in the mask, one will be filled with values 1 and the second with values 2. The background should be filled with 0.
 
-2. Configure the Script
-- Open the file: src/calculate_stats.py.
+## 2. Configure the Script
+- Open the file: `src/calculate_stats.py`.
 - Set the paths to your directories containing the prediction masks and ground truth masks.
 
-3. Execute the script:
+## 3. Execute the script:
 
 ```python
 python src/calculate_stats.py
 ```
-- The script will process the data and save results, including plots and evaluation metrics. More details about the output files can be found in the comments within calculate_stats.py.
+- The script will process the data and save results, including plots and evaluation metrics. More details about the output files can be found in the comments within `calculate_stats.py`.
 
 ## 4. Results
 
@@ -83,21 +83,21 @@ This folder contains the following files:
 
 ### 2. **`vizualization_masks` folder**  
 This folder contains pixel-level visualizations of results for each image:
-- **Green**: True Positives (TP)  
-- **Blue**: False Negatives (FN)  
-- **Red**: False Positives (FP)
+- **Green pixels**: True Positives (TP)  
+- **Blue pixels**: False Negatives (FN)  
+- **Red pixels**: False Positives (FP)
 
 ---
 
 ### 3. **`plots` folder**  
 This folder contains violin plots generated based on data from the `stats.csv` file.
 
-5. Try the Demo
+## 5. Try the Demo
 - A folder named example_data contains demo masks for testing.
 - Run the script with its default settings to generate example plots and results for reference.
 
-6. Script to extract patches
-- I provided a script to divide images into patches. You have to set paths to directories and run the script. Masks will be relabeled in a way that was mentioned before.
+## 6. Script to extract patches
+- A script `prepare_patches.py` can be used to divide images into patches. You have to set paths to directories and run the script. Masks will be relabeled in a way that was mentioned before.
   
 ## References
 
