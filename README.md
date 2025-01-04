@@ -32,10 +32,9 @@ You will need:
 - Ground truth (GT) masks saved in another folder.
 
 File requirements:
-- The filenames of corresponding masks in both folders should match exactly.
-- For example: mask_1.npy in both GT and prediction folders.
+- The filenames of corresponding masks in both folders should match exactly. For example: mask_1.npy in both GT and prediction folders.
 - The masks must be saved as NumPy arrays (.npy files).
-- Each nucleus in the mask must have a unique ID. So if you have two nuclei in the mask, one will be filled with values 1 and the second with values 2. Background should be filled with 0.
+- Each nucleus in the mask must have a unique ID. So if you have two nuclei in the mask, one will be filled with values 1 and the second with values 2. The background should be filled with 0.
 
 2. Configure the Script
 - Open the file: src/calculate_stats.py.
@@ -48,11 +47,21 @@ python src/calculate_stats.py
 ```
 - The script will process the data and save results, including plots and evaluation metrics. More details about the output files can be found in the comments within calculate_stats.py.
 
-4. Try the Demo
+4. Results
+- Three new folders would be created in a main results folder:
+      -  stats folder with the following files:
+              - bf_vis - folder containing visualization of boundary F1 score for each image
+              - stats.csv - file with statistics calculated for each image (DICE, AJI, AJI+, PQ, Boundary F1 score, Recall, Precison, F1, FDR, True Positives, False Positives and False Negatives)
+              - summary.csv - file with the summary of detection statistics (average, standard deviation and median of DICE, AJI, AJI+, PQ, Boundary F1 score for each image)
+              - summary_detection.csv - file with  Recall, Precison, F1 and FDR calculated based on accumulated True Positives, False Positives and False Negatives.
+        - vizualization_masks - folder with pixel level results visualization for each image (green - TP, blue - FN, red - FP)
+        - plots - folder containing violin plots created based on stats.csv file
+
+5. Try the Demo
 - A folder named example_data contains demo masks for testing.
 - Run the script with its default settings to generate example plots and results for reference.
 
-5. Script to extract patches
+6. Script to extract patches
 - I provided a script to divide images into patches. You have to set paths to directories and run the script. Masks will be relabeled in a way that was mentioned before.
   
 ## References
