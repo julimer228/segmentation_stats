@@ -53,17 +53,16 @@ python src/calculate_stats.py
 - Run the script with its default settings to generate example plots and results for reference.
 
 5. Script to extract patches
-- I provided a script to divide images into patches. You have to set paths to directories and run the script. Masks will be relabeled in a way that was mentioned before.  
+- I provided a script to divide images into patches. You have to set paths to directories and run the script. Masks will be relabeled in a way that was mentioned before.
+  
+## References
 
-7. References
-- implementation of Boundary F1 score
-https://github.com/minar09/bfscore_python
-- implementation of DICE, AJI, AJI+ and PQ is based on:
-@article{graham2019hover,
-  title={Hover-net: Simultaneous segmentation and classification of nuclei in multi-tissue histology images},
-  author={Graham, Simon and Vu, Quoc Dang and Raza, Shan E Ahmed and Azam, Ayesha and Tsang, Yee Wah and Kwak, Jin Tae and Rajpoot, Nasir},
-  journal={Medical Image Analysis},
-  pages={101563},
-  year={2019},
-  publisher={Elsevier}
-}
+1. **Implementation of Boundary F1 Score**  
+   - [bfscore_python GitHub Repository](https://github.com/minar09/bfscore_python)
+
+2. **Implementation of DICE, AJI, AJI+, and PQ** is based on:  
+
+   - Graham, Simon, Vu, Quoc Dang, Raza, Shan E Ahmed, Azam, Ayesha, Tsang, Yee Wah, Kwak, Jin Tae, and Rajpoot, Nasir.  
+     *Hover-net: Simultaneous segmentation and classification of nuclei in multi-tissue histology images.*  
+     **Medical Image Analysis**, Elsevier, 2019. Pages: 101563.  
+     DOI: [10.1016/j.media.2019.101563](https://doi.org/10.1016/j.media.2019.101563)
