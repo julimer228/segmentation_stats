@@ -47,15 +47,50 @@ python src/calculate_stats.py
 ```
 - The script will process the data and save results, including plots and evaluation metrics. More details about the output files can be found in the comments within calculate_stats.py.
 
-4. Results
-- Three new folders would be created in a main results folder:
-      -  stats folder with the following files:
-              - bf_vis - folder containing visualization of boundary F1 score for each image
-              - stats.csv - file with statistics calculated for each image (DICE, AJI, AJI+, PQ, Boundary F1 score, Recall, Precison, F1, FDR, True Positives, False Positives and False Negatives)
-              - summary.csv - file with the summary of detection statistics (average, standard deviation and median of DICE, AJI, AJI+, PQ, Boundary F1 score for each image)
-              - summary_detection.csv - file with  Recall, Precison, F1 and FDR calculated based on accumulated True Positives, False Positives and False Negatives.
-        - vizualization_masks - folder with pixel level results visualization for each image (green - TP, blue - FN, red - FP)
-        - plots - folder containing violin plots created based on stats.csv file
+## 4. Results
+
+When the script is executed, three new folders will be created in the main results folder:
+
+### 1. **`stats` folder**  
+This folder contains the following files:
+- **`bf_vis/`**  
+  A subfolder containing visualizations of the Boundary F1 score for each image.
+- **`stats.csv`**  
+  A CSV file with statistics calculated for each image, including:
+  - DICE  
+  - AJI  
+  - AJI+  
+  - PQ  
+  - Boundary F1 score  
+  - Recall  
+  - Precision  
+  - F1  
+  - FDR  
+  - True Positives  
+  - False Positives  
+  - False Negatives
+- **`summary.csv`**  
+  A file summarizing detection statistics, including the **average**, **standard deviation**, and **median** of:
+  - DICE  
+  - AJI  
+  - AJI+  
+  - PQ  
+  - Boundary F1 score (for all images)
+- **`summary_detection.csv`**  
+  A file containing **Recall**, **Precision**, **F1**, and **FDR** calculated based on the accumulated **True Positives**, **False Positives**, and **False Negatives**.
+
+---
+
+### 2. **`vizualization_masks` folder**  
+This folder contains pixel-level visualizations of results for each image:
+- **Green**: True Positives (TP)  
+- **Blue**: False Negatives (FN)  
+- **Red**: False Positives (FP)
+
+---
+
+### 3. **`plots` folder**  
+This folder contains violin plots generated based on data from the `stats.csv` file.
 
 5. Try the Demo
 - A folder named example_data contains demo masks for testing.
