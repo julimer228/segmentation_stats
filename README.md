@@ -77,7 +77,7 @@ This folder contains the following files:
   - PQ  
   - Boundary F1 score (for all images)
 - **`summary_detection.csv`**  
-  A file containing **Recall**, **Precision**, **F1**, and **FDR** calculated based on the accumulated **True Positives**, **False Positives**, and **False Negatives**.
+  A file containing **Recall**, **Precision**, **F1**, and **FDR** calculated based on the accumulated **True Positives**, **False Positives**, and **False Negatives** for all images.
 
 ---
 
