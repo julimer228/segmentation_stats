@@ -62,19 +62,19 @@ if __name__ == '__main__':
     parser.add_argument(
         '--gt',
         type=str,
-        default="example_data/numpy_gt",
+        default="F:/Cell Detection Visual Data/Data/BCCD Dataset with mask/test/pred/numpy_gt/",
         help='Folder with masks'
     )
     parser.add_argument(
         '--pred',
         type=str,
-        default="example_data/numpy_pred",
+        default="C:/Users/Julia/Downloads/outputs/outputs/res/masks/",
         help='Directory for extracted_patches, two dirs: masks and images will be created'
     )
     parser.add_argument(
         '--res',
         type=str,
-        default="example_data/res",
+        default="C:/Users/Julia/Downloads/outputs/outputs/res/stats",
         help='Folder for the results'
     )
     parser.add_argument(
